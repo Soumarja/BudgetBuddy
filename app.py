@@ -5,7 +5,7 @@ from datetime import datetime
 
 st.set_page_config(page_title="BudgetBuddy Pro", layout="wide")
 
-st.title("💰 BudgetBuddy Pro")
+st.title("BudgetBuddy Pro")
 st.markdown("### Smart Expense Tracking Dashboard")
 
 file = "data.csv"
@@ -54,15 +54,15 @@ max_spending = df["Amount"].max() if not df.empty else 0
 
 col1, col2, col3 = st.columns(3)
 
-col1.metric("💵 Total Spending", f"₹ {total_spending:,.2f}")
-col2.metric("📊 Average Expense", f"₹ {avg_spending:,.2f}")
-col3.metric("🔥 Highest Expense", f"₹ {max_spending:,.2f}")
+col1.metric(" Total Spending", f"₹ {total_spending:,.2f}")
+col2.metric("Average Expense", f"₹ {avg_spending:,.2f}")
+col3.metric("Highest Expense", f"₹ {max_spending:,.2f}")
 
 st.divider()
 
 # Charts
 if not df.empty:
-    st.subheader("📈 Category-wise Spending")
+    st.subheader("Category-wise Spending")
 
     category_summary = df.groupby("Category")["Amount"].sum()
 
@@ -78,8 +78,8 @@ if not df.empty:
 st.divider()
 
 # Expense Table
-st.subheader("📋 Expense History")
+st.subheader("Expense History")
 st.dataframe(df.sort_values("Date", ascending=False), use_container_width=True)
 
 st.markdown("---")
-st.markdown("Built with ❤️ using Streamlit")
+st.markdown("Built with using Streamlit")
